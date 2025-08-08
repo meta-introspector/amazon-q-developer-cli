@@ -1,0 +1,106 @@
+{
+  "entries": [
+    {
+      "line_number": 226,
+      "content": "2573-mdupont@mdupont-G470:~/2025/08/07/amazon-q-developer-cli$ cargo run",
+      "context": [
+        "2571: dataset-viewer\t\t  emojis2.md   emojis.md     hf-dataset-validator-rust\t'*shell*<2>'",
+        "2572-mdupont@mdupont-G470:~/2025/08/07$ cd amazon-q-developer-cli/",
+        "2573-mdupont@mdupont-G470:~/2025/08/07/amazon-q-developer-cli$ cargo run",
+        "2574-   Compiling chat_cli v1.13.2 (/mnt/data1/nix/time/2025/08/07/amazon-q-developer-cli/crates/chat-cli)",
+        "--"
+      ]
+    },
+    {
+      "line_number": 843,
+      "content": "        \"mdupont@mdupont-G470:~/2025/08/07/amazon-q-developer-cli$ cargo run\"",
+      "context": [
+        "        \" dataset-viewer\\t\\t  emojis2.md   emojis.md     hf-dataset-validator-rust\\t'*shell*<2>'\",",
+        "        \"mdupont@mdupont-G470:~/2025/08/07$ cd amazon-q-developer-cli/\",",
+        "        \"mdupont@mdupont-G470:~/2025/08/07/amazon-q-developer-cli$ cargo run\"",
+        "      ]",
+        "    },"
+      ]
+    },
+    {
+      "line_number": 2745,
+      "content": "cd /mnt/data1/nix/time/2025/08/07/ragit && cargo run -- query --help",
+      "context": [
+        " ⋮ ",
+        " ● I will run the following shell command: ",
+        "cd /mnt/data1/nix/time/2025/08/07/ragit && cargo run -- query --help",
+        " ⋮ ",
+        " ↳ Purpose: Check if ragit is built and available"
+      ]
+    },
+    {
+      "line_number": 3120,
+      "content": "+    127:    cargo run --package term_quiz_master -- --emoji-vectorize --output-hf-dataset",
+      "context": [
+        "+    125: 3. **Bootstrap Integration**:",
+        "+    126:    ```bash",
+        "+    127:    cargo run --package term_quiz_master -- --emoji-vectorize --output-hf-dataset",
+        "+    128:    ```",
+        "+    129: "
+      ]
+    },
+    {
+      "line_number": 3156,
+      "content": "+    163: 1. **Initialize**: `cargo run --package ragit-build-index-worker-single-file -- bootstrap`",
+      "context": [
+        "+    161: ",
+        "+    162: **Workflow**:",
+        "+    163: 1. **Initialize**: `cargo run --package ragit-build-index-worker-single-file -- bootstrap`",
+        "+    164: 2. **Process Emojis**: Extend bootstrap to include emoji vectorization",
+        "+    165: 3. **Generate Dataset**: Output Hugging Face compatible format"
+      ]
+    },
+    {
+      "line_number": 9399,
+      "content": "+    197: cargo run --bin hf-validator validate-dataset emoji-vectors/",
+      "context": [
+        "+    195: ```bash",
+        "+    196: # Validate dataset structure",
+        "+    197: cargo run --bin hf-validator validate-dataset emoji-vectors/",
+        "+    198: ",
+        "+    199: # Validate parquet files"
+      ]
+    },
+    {
+      "line_number": 9402,
+      "content": "+    200: cargo run --bin hf-validator validate-parquet emoji-vectors/*.parquet",
+      "context": [
+        "+    198: ",
+        "+    199: # Validate parquet files",
+        "+    200: cargo run --bin hf-validator validate-parquet emoji-vectors/*.parquet",
+        "+    201: ",
+        "+    202: # Generate statistics"
+      ]
+    },
+    {
+      "line_number": 9405,
+      "content": "+    203: cargo run --bin hf-validator export-stats emoji-vectors/",
+      "context": [
+        "+    201: ",
+        "+    202: # Generate statistics",
+        "+    203: cargo run --bin hf-validator export-stats emoji-vectors/",
+        "+    204: ```",
+        "+    205: "
+      ]
+    },
+    {
+      "line_number": 11003,
+      "content": "+    127: cargo run --bin emoji-dataset-processor -- --input ./data --output ./hf-dataset",
+      "context": [
+        "+    125: ```bash",
+        "+    126: # Core processing (Rust)",
+        "+    127: cargo run --bin emoji-dataset-processor -- --input ./data --output ./hf-dataset",
+        "+    128: ",
+        "+    129: # Quality analysis (Python, optional)"
+      ]
+    }
+  ],
+  "total_lines": 9,
+  "quality_score": 9.0,
+  "key_insights": []
+}

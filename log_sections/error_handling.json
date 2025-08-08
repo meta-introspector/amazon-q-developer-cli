@@ -1,0 +1,737 @@
+{
+  "entries": [
+    {
+      "line_number": 12,
+      "content": " ● Execution failed after 0.53s:",
+      "context": [
+        " ● Reading file: /mnt/data1/nix/time/2025/08/07/amazon-q-developer-cli/log1.md, all lines",
+        " ⋮ ",
+        " ● Execution failed after 0.53s:",
+        "This tool only supports reading 400000 bytes at a",
+        "time. You tried to read 2736605 bytes. Try executing with fewer lines specified."
+      ]
+    },
+    {
+      "line_number": 31,
+      "content": "error: remote origin already exists.",
+      "context": [
+        "mdupont@mdupont-G470:~$ cd ~/2025/08/07/hf-dataset-validator-rust/",
+        "mdupont@mdupont-G470:~/2025/08/07/hf-dataset-validator-rust$ git remote add origin https://github.com/meta-introspector/hugging-face-dataset-validator-rust",
+        "error: remote origin already exists.",
+        "mdupont@mdupont-G470:~/2025/08/07/hf-dataset-validator-rust$git remote add md https://github.com/meta-introspector/hugging-face-dataset-validator-rust",
+        "mdupont@mdupont-G470:~/2025/08/07/hf-dataset-validator-rust$ git push md"
+      ]
+    },
+    {
+      "line_number": 342,
+      "content": "+     60:             \"error_handling\": re.compile(r'error:|Error|failed|Failed|exception', re.IGNORECASE),",
+      "context": [
+        "+     58:             \"technical_discussions\": re.compile(r'⠋ Thinking|🛠️|Using tool|✓ Successfully', re.IGNORECASE),",
+        "+     59:             \"file_operations\": re.compile(r'fs_read|fs_write|Reading directory|Creating file', re.IGNORECASE),",
+        "+     60:             \"error_handling\": re.compile(r'error:|Error|failed|Failed|exception', re.IGNORECASE),",
+        "+     61:             \"results_summaries\": re.compile(r'### .*Results|## .*Summary|📊|🏆|✅', re.IGNORECASE),",
+        "+     62:             \"code_snippets\": re.compile(r'```|fn |struct |impl |use |mod ', re.IGNORECASE)"
+      ]
+    },
+    {
+      "line_number": 524,
+      "content": "+    242:     print(f\"Error rate: {quality_report['content_quality']['error_to_success_ratio']}\")",
+      "context": [
+        "+    240:     print(f\"Technical discussions: {quality_report['quality_metrics']['technical_discussions']}\")",
+        "+    241:     print(f\"Code snippets: {quality_report['quality_metrics']['code_snippets']}\")",
+        "+    242:     print(f\"Error rate: {quality_report['content_quality']['error_to_success_ratio']}\")",
+        "+    243:     ",
+        "+    244:     print(\"\\n🎯 CONTENT QUALITY INDICATORS:\")"
+      ]
+    },
+    {
+      "line_number": 567,
+      "content": "Error rate: High error rate (> 30%)",
+      "context": [
+        "Technical discussions: 807",
+        "Code snippets: 2280",
+        "Error rate: High error rate (> 30%)",
+        "",
+        "🎯 CONTENT QUALITY INDICATORS:"
+      ]
+    },
+    {
+      "line_number": 588,
+      "content": " ● Execution failed after 0.17s:",
+      "context": [
+        " ● Reading file: /mnt/data1/nix/time/2025/08/07/amazon-q-developer-cli/log_sections/quality_report.json, all lines",
+        " ⋮ ",
+        " ● Execution failed after 0.17s:",
+        "This tool only supports reading 400000 bytes at a",
+        "time. You tried to read 1025824 bytes. Try executing with fewer lines specified."
+      ]
+    },
+    {
+      "line_number": 663,
+      "content": "+     51: #### 7. **Error Handling Section** (499KB, high volume)",
+      "context": [
+        "+     49: ### ⚠️ Lower-Quality Sections (Requires Significant Filtering)",
+        "+     50: ",
+        "+     51: #### 7. **Error Handling Section** (499KB, high volume)",
+        "+     52: - **Quality**: ⭐⭐ Fair (high noise)",
+        "+     53: - **Content**: Error messages, debugging output, failure cases"
+      ]
+    },
+    {
+      "line_number": 665,
+      "content": "+     53: - **Content**: Error messages, debugging output, failure cases",
+      "context": [
+        "+     51: #### 7. **Error Handling Section** (499KB, high volume)",
+        "+     52: - **Quality**: ⭐⭐ Fair (high noise)",
+        "+     53: - **Content**: Error messages, debugging output, failure cases",
+        "+     54: - **Issues**: **High error rate (>30%)** indicates significant debugging sessions",
+        "+     55: - **QA Integration**: **PRIORITY 4** - Extract only resolved error patterns"
+      ]
+    },
+    {
+      "line_number": 708,
+      "content": "+     96: 1. **High Error Rate (>30%)**: Indicates significant debugging and iteration cycles",
+      "context": [
+        "+     94: ",
+        "+     95: ### 🚨 Critical Issues",
+        "+     96: 1. **High Error Rate (>30%)**: Indicates significant debugging and iteration cycles",
+        "+     97:    - **Recommendation**: Filter errors to extract only resolved patterns and solutions",
+        "+     98:    - **Action**: Create error resolution knowledge base"
+      ]
+    },
+    {
+      "line_number": 1007,
+      "content": "+     60: #### 7. Error Handling Section (499KB, high volume)",
+      "context": [
+        "+     58: - **Action**: Extract key decisions and insights only",
+        "+     59: ",
+        "+     60: #### 7. Error Handling Section (499KB, high volume)",
+        "+     61: **Quality Score: 4/10**",
+        "+     62: - High volume of debugging output"
+      ]
+    },
+    {
+      "line_number": 1011,
+      "content": "+     64: - Significant noise from failed attempts",
+      "context": [
+        "+     62: - High volume of debugging output",
+        "+     63: - Contains resolution patterns",
+        "+     64: - Significant noise from failed attempts",
+        "+     65: - **Action**: Extract only resolved error patterns and solutions",
+        "+     66: "
+      ]
+    },
+    {
+      "line_number": 1213,
+      "content": "• **Error Handling** - High volume but contains resolution patterns",
+      "context": [
+        "",
+        "Lower-Quality Sections (Requires Filtering):",
+        "• **Error Handling** - High volume but contains resolution patterns",
+        "• **File/Git/Cargo Operations** - Mostly routine development activities",
+        ""
+      ]
+    },
+    {
+      "line_number": 1240,
+      "content": "The processing reveals that your log contains exceptional documentation of our matrix-to-emoji transformation work, with the universe ",
+      "context": [
+        "   • Integrate with your development workflows",
+        "",
+        "The processing reveals that your log contains exceptional documentation of our matrix-to-emoji transformation work, with the universe ",
+        "system emojis (🧮🔢✨💫🔥🌊📊🎯💎📱🌙⭐🌌🚀🪐) fully validated and the Clifford algebra mathematical foundations thoroughly ",
+        "documented."
+      ]
+    },
+    {
+      "line_number": 1362,
+      "content": "+     45:    - Error-to-success ratio calculation (identified >30% error rate)",
+      "context": [
+        "+     43: 2. **Implemented Quality Assessment Framework**:",
+        "+     44:    - Content scoring algorithm based on technical depth and relevance",
+        "+     45:    - Error-to-success ratio calculation (identified >30% error rate)",
+        "+     46:    - Cross-reference linking for related entries",
+        "+     47:    - Context preservation with line numbers and surrounding content"
+      ]
+    },
+    {
+      "line_number": 1399,
+      "content": "+     82:      - Error Handling Section (499KB) - ⭐⭐",
+      "context": [
+        "+     80:    ",
+        "+     81:    - **Tier 3 (Lower Quality - Requires Filtering)**:",
+        "+     82:      - Error Handling Section (499KB) - ⭐⭐",
+        "+     83:      - File/Git/Cargo Operations - ⭐⭐",
+        "+     84: "
+      ]
+    },
+    {
+      "line_number": 1490,
+      "content": "+    173: 1. **High Error Rate (>30%)**: Indicates significant debugging and iteration cycles",
+      "context": [
+        "+    171: ### 5.3. Quality Improvement Opportunities",
+        "+    172: **Critical Issues Identified**:",
+        "+    173: 1. **High Error Rate (>30%)**: Indicates significant debugging and iteration cycles",
+        "+    174:    - **Recommendation**: Extract resolved patterns for knowledge base",
+        "+    175:    - **Action**: Create error resolution index"
+      ]
+    },
+    {
+      "line_number": 1585,
+      "content": "+     7: - **Error Rate Analysis**: Identified >30% error rate indicating significant debugging cycles requiring resolution pattern extraction",
+      "context": [
+        "+     5: - **Section Identification**: 11 distinct content categories with pattern-based regex matching",
+        "+     6: - **Quality Assessment Framework**: Automated content scoring with technical depth and relevance metrics",
+        "+     7: - **Error Rate Analysis**: Identified >30% error rate indicating significant debugging cycles requiring resolution pattern extraction",
+        "+     8: - **Ragit Concept:** The systematic decomposition of large-scale development artifacts into analyzable, structured components for knowledge preservation and quality assurance.",
+        "+     9: "
+      ]
+    },
+    {
+      "line_number": 1797,
+      "content": "+    107: 1. **High Error Rate (>30%)**: Significant debugging cycles documented",
+      "context": [
+        "+    105: ",
+        "+    106: **Critical Issues Identified**:",
+        "+    107: 1. **High Error Rate (>30%)**: Significant debugging cycles documented",
+        "+    108: 2. **Signal-to-Noise Ratio**: Routine operations mixed with key insights",
+        "+    109: 3. **Cross-Reference Density**: Needs improvement for better navigation"
+      ]
+    },
+    {
+      "line_number": 1870,
+      "content": "+    180: 1. **Error Resolution Index**: Extract resolved patterns from high error rate documentation",
+      "context": [
+        "+    178: ",
+        "+    179: **Immediate Actions Required**:",
+        "+    180: 1. **Error Resolution Index**: Extract resolved patterns from high error rate documentation",
+        "+    181: 2. **Automated Relevance Scoring**: Implement content curation to optimize signal-to-noise ratios",
+        "+    182: 3. **Cross-Reference Enhancement**: Improve semantic linking for better knowledge navigation"
+      ]
+    },
+    {
+      "line_number": 1905,
+      "content": "+    215: 3. **Problem Resolution Database**: Error patterns and solutions systematically cataloged",
+      "context": [
+        "+    213: 1. **Complete Phased Integration**: All three phases executed with curated content",
+        "+    214: 2. **Automated Curation Deployment**: Relevance filtering and content scoring operational",
+        "+    215: 3. **Problem Resolution Database**: Error patterns and solutions systematically cataloged",
+        "+    216: 4. **User Feedback System**: Quality assessment and improvement suggestions collected",
+        "+    217: "
+      ]
+    },
+    {
+      "line_number": 2325,
+      "content": "+     70:             print(f\"❌ Error loading emoji analysis data: {e}\")",
+      "context": [
+        "+     68:             return data",
+        "+     69:         except Exception as e:",
+        "+     70:             print(f\"❌ Error loading emoji analysis data: {e}\")",
+        "+     71:             return {}",
+        "+     72: "
+      ]
+    },
+    {
+      "line_number": 2343,
+      "content": "+     88:             print(f\"❌ Error loading vectorized emojis: {e}\")",
+      "context": [
+        "+     86:             return data",
+        "+     87:         except Exception as e:",
+        "+     88:             print(f\"❌ Error loading vectorized emojis: {e}\")",
+        "+     89:             return {}",
+        "+     90: "
+      ]
+    },
+    {
+      "line_number": 2516,
+      "content": "+    261:                 print(f\"⚠️ Error processing emoji {emoji}: {e}\")",
+      "context": [
+        "+    259:                 ",
+        "+    260:             except Exception as e:",
+        "+    261:                 print(f\"⚠️ Error processing emoji {emoji}: {e}\")",
+        "+    262:                 continue",
+        "+    263:         "
+      ]
+    },
+    {
+      "line_number": 2664,
+      "content": "+    409:         print(\"❌ Failed to compile dataset\")",
+      "context": [
+        "+    407:     ",
+        "+    408:     if df.empty:",
+        "+    409:         print(\"❌ Failed to compile dataset\")",
+        "+    410:         return",
+        "+    411:     "
+      ]
+    },
+    {
+      "line_number": 2749,
+      "content": "error: failed to load manifest for workspace member `/mnt/data1/nix/time/2025/08/07/ragit/crates/semantic_term_processor`",
+      "context": [
+        " ↳ Purpose: Check if ragit is built and available",
+        "",
+        "error: failed to load manifest for workspace member `/mnt/data1/nix/time/2025/08/07/ragit/crates/semantic_term_processor`",
+        "referenced by workspace at `/mnt/data1/nix/time/2025/08/07/ragit/Cargo.toml`",
+        ""
+      ]
+    },
+    {
+      "line_number": 2753,
+      "content": "  failed to load manifest for dependency `sophia_api`",
+      "context": [
+        "",
+        "Caused by:",
+        "  failed to load manifest for dependency `sophia_api`",
+        "",
+        "Caused by:"
+      ]
+    },
+    {
+      "line_number": 2756,
+      "content": "  failed to read `/mnt/data1/nix/time/2025/08/07/ragit/vendor/sophia_rs/api/Cargo.toml`",
+      "context": [
+        "",
+        "Caused by:",
+        "  failed to read `/mnt/data1/nix/time/2025/08/07/ragit/vendor/sophia_rs/api/Cargo.toml`",
+        "",
+        "Caused by:"
+      ]
+    },
+    {
+      "line_number": 2836,
+      "content": "Tool validation failed: ",
+      "context": [
+        "⠸ Thinking...",
+        "",
+        "Tool validation failed: ",
+        "Failed to validate tool parameters: Path is not a file: ../ragit/docs",
+        ""
+      ]
+    },
+    {
+      "line_number": 2837,
+      "content": "Failed to validate tool parameters: Path is not a file: ../ragit/docs",
+      "context": [
+        "",
+        "Tool validation failed: ",
+        "Failed to validate tool parameters: Path is not a file: ../ragit/docs",
+        "",
+        "⠋ Thinking..."
+      ]
+    },
+    {
+      "line_number": 2895,
+      "content": "Tool validation failed: ",
+      "context": [
+        "⠼ Thinking...",
+        "",
+        "Tool validation failed: ",
+        "Failed to validate tool parameters: Path is not a file: ../ragit",
+        ""
+      ]
+    },
+    {
+      "line_number": 2896,
+      "content": "Failed to validate tool parameters: Path is not a file: ../ragit",
+      "context": [
+        "",
+        "Tool validation failed: ",
+        "Failed to validate tool parameters: Path is not a file: ../ragit",
+        "",
+        "⠴ Thinking..."
+      ]
+    },
+    {
+      "line_number": 3048,
+      "content": "+     55:        SolMultivector::from_vector(coeffs.to_vec()).unwrap()",
+      "context": [
+        "+     53:            coeffs[i] = (result[i] as f32 / 255.0) * 2.0 - 1.0;",
+        "+     54:        }",
+        "+     55:        SolMultivector::from_vector(coeffs.to_vec()).unwrap()",
+        "+     56:    }",
+        "+     57:    ```"
+      ]
+    },
+    {
+      "line_number": 3356,
+      "content": "+    50: - **Error Analysis**: >30% error rate identified with resolution pattern extraction",
+      "context": [
+        "+    48: - **Content Scoring**: Automated relevance assessment with technical depth metrics",
+        "+    49: - **Integration Strategy**: Phased approach for systematic knowledge base construction",
+        "+    50: - **Error Analysis**: >30% error rate identified with resolution pattern extraction",
+        "+    51: ",
+        "+    52: ## Implementation Strategy"
+      ]
+    },
+    {
+      "line_number": 3853,
+      "content": "Tool validation failed: ",
+      "context": [
+        "⠴ Thinking...",
+        "",
+        "Tool validation failed: ",
+        "Failed to validate tool parameters: Path is not a file: ../ragit/src",
+        ""
+      ]
+    },
+    {
+      "line_number": 3854,
+      "content": "Failed to validate tool parameters: Path is not a file: ../ragit/src",
+      "context": [
+        "",
+        "Tool validation failed: ",
+        "Failed to validate tool parameters: Path is not a file: ../ragit/src",
+        "",
+        "⠴ Thinking..."
+      ]
+    },
+    {
+      "line_number": 5925,
+      "content": "grep: ./vendor/meta-introspector/solfunmeme-dioxus/hf_dataset/reports/src_generated_vendor_getrandom_nopanic_check.rs: Is a directory",
+      "context": [
+        "grep: ./vendor/meta-introspector/solfunmeme-dioxus/hf_dataset/reports/src_generated_vendor_rustix_tests_thread.rs: Is a directory",
+        "grep: ./vendor/meta-introspector/solfunmeme-dioxus/hf_dataset/reports/src_generated_vendor_untrusted_src.rs: Is a directory",
+        "grep: ./vendor/meta-introspector/solfunmeme-dioxus/hf_dataset/reports/src_generated_vendor_getrandom_nopanic_check.rs: Is a directory",
+        "grep: ./vendor/meta-introspector/solfunmeme-dioxus/hf_dataset/reports/src_generated_vendor_unicodewidth_scripts.rs: Is a directory",
+        "grep: ./vendor/meta-introspector/solfunmeme-dioxus/hf_dataset/reports/src_generated_vendor_curves_github_workflows.rs: Is a directory"
+      ]
+    },
+    {
+      "line_number": 6624,
+      "content": "grep: ./vendor/meta-introspector/solfunmeme-dioxus/hf_dataset/reports/src_generated_vendor_console_error_panic_hook.rs: Is a directory",
+      "context": [
+        "grep: ./vendor/meta-introspector/solfunmeme-dioxus/hf_dataset/reports/src_generated_vendor_hashes_sm3_src.rs: Is a directory",
+        "grep: ./vendor/meta-introspector/solfunmeme-dioxus/hf_dataset/reports/src_generated_vendor_utils_fiatconstify.rs: Is a directory",
+        "grep: ./vendor/meta-introspector/solfunmeme-dioxus/hf_dataset/reports/src_generated_vendor_console_error_panic_hook.rs: Is a directory",
+        "grep: ./vendor/meta-introspector/solfunmeme-dioxus/hf_dataset/reports/src_generated_vendor_tinyvec_benches.rs: Is a directory",
+        "grep: ./vendor/meta-introspector/solfunmeme-dioxus/hf_dataset/reports/src_generated_vendor_algebra_curves_mnt4_298.rs: Is a directory"
+      ]
+    },
+    {
+      "line_number": 7592,
+      "content": "grep: ./vendor/meta-introspector/solfunmeme-dioxus/hf_dataset/reports/src_generated_vendor_fiatcrypto_src_Util_ErrorT.rs: Is a directory",
+      "context": [
+        "grep: ./vendor/meta-introspector/solfunmeme-dioxus/hf_dataset/reports/src_generated_vendor_blockciphers_cast5.rs: Is a directory",
+        "grep: ./vendor/meta-introspector/solfunmeme-dioxus/hf_dataset/reports/src_generated_vendor_rustbitcoin_base58_contrib.rs: Is a directory",
+        "grep: ./vendor/meta-introspector/solfunmeme-dioxus/hf_dataset/reports/src_generated_vendor_fiatcrypto_src_Util_ErrorT.rs: Is a directory",
+        "grep: ./vendor/meta-introspector/solfunmeme-dioxus/hf_dataset/reports/src_generated_vendor_blockmodes_ige_tests.rs: Is a directory",
+        "grep: ./vendor/meta-introspector/solfunmeme-dioxus/hf_dataset/reports/src_generated_vendor_solanasdk_program_tests.rs: Is a directory"
+      ]
+    },
+    {
+      "line_number": 9255,
+      "content": "+     53:     pub fn process_emoji_analysis_data(&self, input_path: &Path) -> Result<(), ProcessingError> {",
+      "context": [
+        "+     51: ",
+        "+     52: impl EmojiDatasetProcessor {",
+        "+     53:     pub fn process_emoji_analysis_data(&self, input_path: &Path) -> Result<(), ProcessingError> {",
+        "+     54:         // 1. Stream process the 22GB JSON file",
+        "+     55:         // 2. Generate multivectors for unique emojis only"
+      ]
+    },
+    {
+      "line_number": 9309,
+      "content": "+    107: pub fn process_emoji_data_to_hf_dataset() -> Result<(), ProcessingError> {",
+      "context": [
+        "+    105: use ragit_hf_dataset::EmojiDatasetProcessor;",
+        "+    106: ",
+        "+    107: pub fn process_emoji_data_to_hf_dataset() -> Result<(), ProcessingError> {",
+        "+    108:     let processor = EmojiDatasetProcessor::new()",
+        "+    109:         .with_universe_emojis(UNIVERSE_EMOJIS)"
+      ]
+    },
+    {
+      "line_number": 9506,
+      "content": "fatal: clone of '/home/mdupont/2025/08/07/hf-dataset-validator-rust' into submodule path '/mnt/data1/nix/time/2025/08/07/ragit/vendor/hf-dataset-validator-rust' failed",
+      "context": [
+        "Cloning into '/mnt/data1/nix/time/2025/08/07/ragit/vendor/hf-dataset-validator-rust'...",
+        "fatal: transport 'file' not allowed",
+        "fatal: clone of '/home/mdupont/2025/08/07/hf-dataset-validator-rust' into submodule path '/mnt/data1/nix/time/2025/08/07/ragit/vendor/hf-dataset-validator-rust' failed",
+        "",
+        " ⋮ "
+      ]
+    },
+    {
+      "line_number": 9600,
+      "content": "+     9: use thiserror::Error;",
+      "context": [
+        "+     7: pub use dataset_metadata::DatasetMetadata;",
+        "+     8: ",
+        "+     9: use thiserror::Error;",
+        "+    10: ",
+        "+    11: #[derive(Error, Debug)]"
+      ]
+    },
+    {
+      "line_number": 9602,
+      "content": "+    11: #[derive(Error, Debug)]",
+      "context": [
+        "+     9: use thiserror::Error;",
+        "+    10: ",
+        "+    11: #[derive(Error, Debug)]",
+        "+    12: pub enum ProcessingError {",
+        "+    13:     #[error(\"IO error: {0}\")]"
+      ]
+    },
+    {
+      "line_number": 9603,
+      "content": "+    12: pub enum ProcessingError {",
+      "context": [
+        "+    10: ",
+        "+    11: #[derive(Error, Debug)]",
+        "+    12: pub enum ProcessingError {",
+        "+    13:     #[error(\"IO error: {0}\")]",
+        "+    14:     Io(#[from] std::io::Error),"
+      ]
+    },
+    {
+      "line_number": 9604,
+      "content": "+    13:     #[error(\"IO error: {0}\")]",
+      "context": [
+        "+    11: #[derive(Error, Debug)]",
+        "+    12: pub enum ProcessingError {",
+        "+    13:     #[error(\"IO error: {0}\")]",
+        "+    14:     Io(#[from] std::io::Error),",
+        "+    15:     "
+      ]
+    },
+    {
+      "line_number": 9605,
+      "content": "+    14:     Io(#[from] std::io::Error),",
+      "context": [
+        "+    12: pub enum ProcessingError {",
+        "+    13:     #[error(\"IO error: {0}\")]",
+        "+    14:     Io(#[from] std::io::Error),",
+        "+    15:     ",
+        "+    16:     #[error(\"JSON parsing error: {0}\")]"
+      ]
+    },
+    {
+      "line_number": 9607,
+      "content": "+    16:     #[error(\"JSON parsing error: {0}\")]",
+      "context": [
+        "+    14:     Io(#[from] std::io::Error),",
+        "+    15:     ",
+        "+    16:     #[error(\"JSON parsing error: {0}\")]",
+        "+    17:     Json(#[from] serde_json::Error),",
+        "+    18:     "
+      ]
+    },
+    {
+      "line_number": 9608,
+      "content": "+    17:     Json(#[from] serde_json::Error),",
+      "context": [
+        "+    15:     ",
+        "+    16:     #[error(\"JSON parsing error: {0}\")]",
+        "+    17:     Json(#[from] serde_json::Error),",
+        "+    18:     ",
+        "+    19:     #[error(\"Parquet error: {0}\")]"
+      ]
+    },
+    {
+      "line_number": 9610,
+      "content": "+    19:     #[error(\"Parquet error: {0}\")]",
+      "context": [
+        "+    17:     Json(#[from] serde_json::Error),",
+        "+    18:     ",
+        "+    19:     #[error(\"Parquet error: {0}\")]",
+        "+    20:     Parquet(#[from] parquet::errors::ParquetError),",
+        "+    21:     "
+      ]
+    },
+    {
+      "line_number": 9611,
+      "content": "+    20:     Parquet(#[from] parquet::errors::ParquetError),",
+      "context": [
+        "+    18:     ",
+        "+    19:     #[error(\"Parquet error: {0}\")]",
+        "+    20:     Parquet(#[from] parquet::errors::ParquetError),",
+        "+    21:     ",
+        "+    22:     #[error(\"Arrow error: {0}\")]"
+      ]
+    },
+    {
+      "line_number": 9613,
+      "content": "+    22:     #[error(\"Arrow error: {0}\")]",
+      "context": [
+        "+    20:     Parquet(#[from] parquet::errors::ParquetError),",
+        "+    21:     ",
+        "+    22:     #[error(\"Arrow error: {0}\")]",
+        "+    23:     Arrow(#[from] arrow::error::ArrowError),",
+        "+    24:     "
+      ]
+    },
+    {
+      "line_number": 9614,
+      "content": "+    23:     Arrow(#[from] arrow::error::ArrowError),",
+      "context": [
+        "+    21:     ",
+        "+    22:     #[error(\"Arrow error: {0}\")]",
+        "+    23:     Arrow(#[from] arrow::error::ArrowError),",
+        "+    24:     ",
+        "+    25:     #[error(\"Processing error: {0}\")]"
+      ]
+    },
+    {
+      "line_number": 9616,
+      "content": "+    25:     #[error(\"Processing error: {0}\")]",
+      "context": [
+        "+    23:     Arrow(#[from] arrow::error::ArrowError),",
+        "+    24:     ",
+        "+    25:     #[error(\"Processing error: {0}\")]",
+        "+    26:     Processing(String),",
+        "+    27:     "
+      ]
+    },
+    {
+      "line_number": 9619,
+      "content": "+    28:     #[error(\"Validation error: {0}\")]",
+      "context": [
+        "+    26:     Processing(String),",
+        "+    27:     ",
+        "+    28:     #[error(\"Validation error: {0}\")]",
+        "+    29:     Validation(String),",
+        "+    30: }"
+      ]
+    },
+    {
+      "line_number": 9623,
+      "content": "+    32: pub type Result<T> = std::result::Result<T, ProcessingError>;",
+      "context": [
+        "+    30: }",
+        "+    31: ",
+        "+    32: pub type Result<T> = std::result::Result<T, ProcessingError>;",
+        "",
+        " ⋮ "
+      ]
+    },
+    {
+      "line_number": 9640,
+      "content": "+      1: use crate::{Result, ProcessingError, EmojiParquetWriter, DatasetMetadata};",
+      "context": [
+        " ● Path: /mnt/data1/nix/time/2025/08/07/ragit/crates/layer7_application/ragit-hf-dataset/src/emoji_processor.rs",
+        "",
+        "+      1: use crate::{Result, ProcessingError, EmojiParquetWriter, DatasetMetadata};",
+        "+      2: use serde::{Deserialize, Serialize};",
+        "+      3: use solfunmeme_clifford::generate_multivector_from_string;"
+      ]
+    },
+    {
+      "line_number": 9851,
+      "content": "+    212:                 .unwrap_or_else(|| \"U+0000\".to_string());",
+      "context": [
+        "+    210:                 .next()",
+        "+    211:                 .map(|c| format!(\"U+{:04X}\", c as u32))",
+        "+    212:                 .unwrap_or_else(|| \"U+0000\".to_string());",
+        "+    213:             ",
+        "+    214:             // Sample contexts (max 3)"
+      ]
+    },
+    {
+      "line_number": 9907,
+      "content": "+    268:         let code_point = emoji.chars().next().map(|c| c as u32).unwrap_or(0);",
+      "context": [
+        "+    266:         ",
+        "+    267:         // Default categorization based on Unicode blocks",
+        "+    268:         let code_point = emoji.chars().next().map(|c| c as u32).unwrap_or(0);",
+        "+    269:         ",
+        "+    270:         match code_point {"
+      ]
+    },
+    {
+      "line_number": 9962,
+      "content": "+      1: use crate::{Result, ProcessingError, EmojiRecord};",
+      "context": [
+        " ● Path: /mnt/data1/nix/time/2025/08/07/ragit/crates/layer7_application/ragit-hf-dataset/src/parquet_writer.rs",
+        "",
+        "+      1: use crate::{Result, ProcessingError, EmojiRecord};",
+        "+      2: use arrow::array::*;",
+        "+      3: use arrow::datatypes::{DataType, Field, Schema};"
+      ]
+    },
+    {
+      "line_number": 10669,
+      "content": "+    149: async fn main() -> Result<(), Box<dyn std::error::Error>> {",
+      "context": [
+        "+    147: ",
+        "+    148: #[tokio::main]",
+        "+    149: async fn main() -> Result<(), Box<dyn std::error::Error>> {",
+        "+    150:     let processor = EmojiDatasetProcessor::new()",
+        "+    151:         .with_max_file_size_mb(10)"
+      ]
+    },
+    {
+      "line_number": 10686,
+      "content": "+    166: pub fn generate_emoji_hf_dataset() -> Result<(), ProcessingError> {",
+      "context": [
+        "+    164: ```rust",
+        "+    165: // In term_quiz_master/src/emoji_vectorizer.rs",
+        "+    166: pub fn generate_emoji_hf_dataset() -> Result<(), ProcessingError> {",
+        "+    167:     let processor = EmojiDatasetProcessor::new();",
+        "+    168:     processor.process_emoji_analysis_data(\"emoji_analysis_data.json\")?;"
+      ]
+    },
+    {
+      "line_number": 10839,
+      "content": " ● Summary: 2 operations processed, 2 successful, 0 failed",
+      "context": [
+        " ⋮ ",
+        "",
+        " ● Summary: 2 operations processed, 2 successful, 0 failed",
+        "",
+        " ⋮ "
+      ]
+    },
+    {
+      "line_number": 10905,
+      "content": "+     29:     pub fn process_raw_data() -> Result<HFDataset, Error>",
+      "context": [
+        "+     27: pub struct EmojiDatasetProcessor {",
+        "+     28:     // Direct processing without JSON intermediates",
+        "+     29:     pub fn process_raw_data() -> Result<HFDataset, Error>",
+        "+     30:     pub fn generate_parquet() -> Result<Vec<ParquetFile>, Error>",
+        "+     31:     pub fn create_hf_metadata() -> Result<DatasetMetadata, Error>"
+      ]
+    },
+    {
+      "line_number": 10906,
+      "content": "+     30:     pub fn generate_parquet() -> Result<Vec<ParquetFile>, Error>",
+      "context": [
+        "+     28:     // Direct processing without JSON intermediates",
+        "+     29:     pub fn process_raw_data() -> Result<HFDataset, Error>",
+        "+     30:     pub fn generate_parquet() -> Result<Vec<ParquetFile>, Error>",
+        "+     31:     pub fn create_hf_metadata() -> Result<DatasetMetadata, Error>",
+        "+     32: }"
+      ]
+    },
+    {
+      "line_number": 10907,
+      "content": "+     31:     pub fn create_hf_metadata() -> Result<DatasetMetadata, Error>",
+      "context": [
+        "+     29:     pub fn process_raw_data() -> Result<HFDataset, Error>",
+        "+     30:     pub fn generate_parquet() -> Result<Vec<ParquetFile>, Error>",
+        "+     31:     pub fn create_hf_metadata() -> Result<DatasetMetadata, Error>",
+        "+     32: }",
+        "+     33: ```"
+      ]
+    },
+    {
+      "line_number": 11050,
+      "content": " ● Summary: 2 operations processed, 2 successful, 0 failed",
+      "context": [
+        " ⋮ ",
+        "",
+        " ● Summary: 2 operations processed, 2 successful, 0 failed",
+        "",
+        " ⋮ "
+      ]
+    }
+  ],
+  "total_lines": 66,
+  "quality_score": 3.888888888888889,
+  "key_insights": [
+    "Line 342: +     60:             \"error_handling\": re.compile(r'error:|Error|failed|Failed|...",
+    "Line 1240: The processing reveals that your log contains exceptional documentation of our m...",
+    "Line 1585: +     7: - **Error Rate Analysis**: Identified >30% error rate indicating signif..."
+  ]
+}

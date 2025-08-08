@@ -1,0 +1,37 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/lambda-calculus-core",
+    "crates/emoji-semantics", 
+    "crates/stanza-universe",
+    "crates/minimal-runtime-server",
+    "crates/candle-lambda-fusion",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+authors = ["SOLFUNMEME Neural Lambda Team"]
+license = "MIT OR Apache-2.0"
+description = "Neural network composition through emoji-encoded lambda calculus"
+
+[workspace.dependencies]
+# Core dependencies
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+thiserror = "1.0"
+uuid = { version = "1.0", features = ["v4"] }
+tokio = { version = "1.0", features = ["full"] }
+axum = "0.7"
+tower = "0.4"
+
+# Candle dependencies
+candle-core = "0.6"
+candle-nn = "0.6"
+
+# Our crates
+lambda-calculus-core = { path = "crates/lambda-calculus-core" }
+emoji-semantics = { path = "crates/emoji-semantics" }
+stanza-universe = { path = "crates/stanza-universe" }
+minimal-runtime-server = { path = "crates/minimal-runtime-server" }
+candle-lambda-fusion = { path = "crates/candle-lambda-fusion" }

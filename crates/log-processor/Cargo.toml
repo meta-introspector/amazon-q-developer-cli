@@ -1,0 +1,22 @@
+[package]
+name = "log-processor"
+version = "0.1.0"
+edition = "2021"
+authors = ["Amazon Q CLI Team"]
+description = "Rust-native log processor for QA system integration - replaces Python implementation"
+
+[[bin]]
+name = "log_processor"
+path = "src/bin/log_processor.rs"
+
+[dependencies]
+regex = "1.10"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+chrono = { version = "0.4", features = ["serde"] }
+clap = { version = "4.0", features = ["derive"] }
+anyhow = "1.0"
+tokio = { version = "1.0", features = ["full"] }
+
+[dev-dependencies]
+tempfile = "3.0"

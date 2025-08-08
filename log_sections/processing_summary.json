@@ -1,0 +1,95 @@
+{
+  "processing_summary": {
+    "conversion_status": "✅ Successfully converted from Python to Rust",
+    "integration_ready": false,
+    "performance_improvement": "🚀 Native Rust processing - no Python dependencies",
+    "python_elimination": "🎯 Python completely removed from processing pipeline",
+    "quality_distribution": {
+      "tier1_high_priority": 0,
+      "tier2_medium_priority": 0,
+      "tier3_lower_priority": 11
+    },
+    "total_insights_extracted": 437,
+    "total_lines_processed": 24093,
+    "total_sections": 11
+  },
+  "section_details": [
+    {
+      "insights_count": 3,
+      "lines": 470,
+      "name": "code_snippets",
+      "priority_tier": 3,
+      "quality_score": 9.155688622754491
+    },
+    {
+      "insights_count": 0,
+      "lines": 9,
+      "name": "cargo_operations",
+      "priority_tier": 3,
+      "quality_score": 9.0
+    },
+    {
+      "insights_count": 3,
+      "lines": 192,
+      "name": "technical_discussions",
+      "priority_tier": 3,
+      "quality_score": 9.0
+    },
+    {
+      "insights_count": 3,
+      "lines": 11096,
+      "name": "general",
+      "priority_tier": 3,
+      "quality_score": 8.297935103244837
+    },
+    {
+      "insights_count": 217,
+      "lines": 5710,
+      "name": "ragit_work",
+      "priority_tier": 3,
+      "quality_score": 8.476190476190476
+    },
+    {
+      "insights_count": 100,
+      "lines": 749,
+      "name": "emoji_analysis",
+      "priority_tier": 3,
+      "quality_score": 8.527272727272727
+    },
+    {
+      "insights_count": 3,
+      "lines": 34,
+      "name": "git_operations",
+      "priority_tier": 3,
+      "quality_score": 9.0
+    },
+    {
+      "insights_count": 3,
+      "lines": 137,
+      "name": "results_summaries",
+      "priority_tier": 3,
+      "quality_score": 9.0
+    },
+    {
+      "insights_count": 3,
+      "lines": 75,
+      "name": "file_operations",
+      "priority_tier": 3,
+      "quality_score": 1.0
+    },
+    {
+      "insights_count": 99,
+      "lines": 5555,
+      "name": "dataset_generation",
+      "priority_tier": 3,
+      "quality_score": 7.923076923076923
+    },
+    {
+      "insights_count": 3,
+      "lines": 66,
+      "name": "error_handling",
+      "priority_tier": 3,
+      "quality_score": 3.888888888888889
+    }
+  ]
+}
