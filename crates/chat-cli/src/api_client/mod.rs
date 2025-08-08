@@ -66,12 +66,14 @@ pub const X_AMZN_CODEWHISPERER_OPT_OUT_HEADER: &str = "x-amzn-codewhisperer-opto
 // TODO(bskiser): confirm timeout is updated to an appropriate value?
 const DEFAULT_TIMEOUT_DURATION: Duration = Duration::from_secs(60 * 5);
 
+use crate::api_client::gemini_client::GeminiClient;
+
 #[derive(Clone, Debug)]
 pub struct ApiClient {
     client: CodewhispererClient,
     streaming_client: Option<CodewhispererStreamingClient>,
     sigv4_streaming_client: Option<QDeveloperStreamingClient>,
-    mock_client: Option<Arc<Mutex<std::vec::IntoIter<Vec<ChatResponseStream>>>>>,
+    gemini_client: Option<GeminiClient>,
     profile: Option<AuthProfile>,
 }
 
@@ -104,22 +106,6 @@ impl ApiClient {
                 .endpoint_url(endpoint.url())
                 .build(),
         );
-
-        if cfg!(test) {
-            let mut this = Self {
-                client,
-                streaming_client: None,
-                sigv4_streaming_client: None,
-                mock_client: None,
-                profile: None,
-            };
-
-            if let Ok(json) = env.get("Q_MOCK_CHAT_RESPONSE") {
-                this.set_mock_output(serde_json::from_str(fs.read_to_string(json).await.unwrap().as_str()).unwrap());
-            }
-
-            return Ok(this);
-        }
 
         // If SIGV4_AUTH_ENABLED is true, use Q developer client
         let mut streaming_client = None;
@@ -165,6 +151,8 @@ impl ApiClient {
             },
         }
 
+        let gemini_client = env.get("GEMINI_API_KEY").ok().map(GeminiClient::new);
+
         let profile = match database.get_auth_profile() {
             Ok(profile) => profile,
             Err(err) => {
@@ -177,7 +165,7 @@ impl ApiClient {
             client,
             streaming_client,
             sigv4_streaming_client,
-            mock_client: None,
+            gemini_client,
             profile,
         })
     }
@@ -445,38 +433,12 @@ impl ApiClient {
                     Err(err.into())
                 },
             }
-        } else if let Some(client) = &self.mock_client {
-            let mut new_events = client.lock().next().unwrap_or_default().clone();
-            new_events.reverse();
-
-            return Ok(SendMessageOutput::Mock(new_events));
+        } else if let Some(client) = &self.gemini_client {
+            let new_events = client.send_message(conversation).await.unwrap();
+            return Ok(SendMessageOutput::Gemini(new_events));
         } else {
             unreachable!("One of the clients must be created by this point");
         }
-    }
-
-    /// Only meant for testing. Do not use outside of testing responses.
-    pub fn set_mock_output(&mut self, json: serde_json::Value) {
-        let mut mock = Vec::new();
-        for response in json.as_array().unwrap() {
-            let mut stream = Vec::new();
-            for event in response.as_array().unwrap() {
-                match event {
-                    serde_json::Value::String(assistant_text) => {
-                        stream.push(ChatResponseStream::AssistantResponseEvent {
-                            content: assistant_text.clone(),
-                        });
-                    },
-                    serde_json::Value::Object(tool_use) => {
-                        stream.append(&mut split_tool_use_event(tool_use));
-                    },
-                    other => panic!("Unexpected value: {:?}", other),
-                }
-            }
-            mock.push(stream);
-        }
-
-        self.mock_client = Some(Arc::new(Mutex::new(mock.into_iter())));
     }
 }
 
@@ -504,120 +466,4 @@ pub fn stalled_stream_protection_config() -> StalledStreamProtectionConfig {
         .grace_period(Duration::from_secs(60 * 5))
         .build()
 }
-
-fn split_tool_use_event(value: &Map<String, serde_json::Value>) -> Vec<ChatResponseStream> {
-    let tool_use_id = value.get("tool_use_id").unwrap().as_str().unwrap().to_string();
-    let name = value.get("name").unwrap().as_str().unwrap().to_string();
-    let args_str = value.get("args").unwrap().to_string();
-    let split_point = args_str.len() / 2;
-    vec![
-        ChatResponseStream::ToolUseEvent {
-            tool_use_id: tool_use_id.clone(),
-            name: name.clone(),
-            input: None,
-            stop: None,
-        },
-        ChatResponseStream::ToolUseEvent {
-            tool_use_id: tool_use_id.clone(),
-            name: name.clone(),
-            input: Some(args_str.split_at(split_point).0.to_string()),
-            stop: None,
-        },
-        ChatResponseStream::ToolUseEvent {
-            tool_use_id: tool_use_id.clone(),
-            name: name.clone(),
-            input: Some(args_str.split_at(split_point).1.to_string()),
-            stop: None,
-        },
-        ChatResponseStream::ToolUseEvent {
-            tool_use_id: tool_use_id.clone(),
-            name: name.clone(),
-            input: None,
-            stop: Some(true),
-        },
-    ]
-}
-
-#[cfg(test)]
-mod tests {
-    use amzn_codewhisperer_client::types::{
-        ChatAddMessageEvent,
-        IdeCategory,
-        OperatingSystem,
-    };
-
-    use super::*;
-    use crate::api_client::model::UserInputMessage;
-
-    #[tokio::test]
-    async fn create_clients() {
-        let env = Env::new();
-        let fs = Fs::new();
-        let mut database = crate::database::Database::new().await.unwrap();
-        let _ = ApiClient::new(&env, &fs, &mut database, None).await;
-    }
-
-    #[tokio::test]
-    async fn test_mock() {
-        let env = Env::new();
-        let fs = Fs::new();
-        let mut database = crate::database::Database::new().await.unwrap();
-        let mut client = ApiClient::new(&env, &fs, &mut database, None).await.unwrap();
-        client
-            .send_telemetry_event(
-                TelemetryEvent::ChatAddMessageEvent(
-                    ChatAddMessageEvent::builder()
-                        .conversation_id("<conversation-id>")
-                        .message_id("<message-id>")
-                        .build()
-                        .unwrap(),
-                ),
-                UserContext::builder()
-                    .ide_category(IdeCategory::Cli)
-                    .operating_system(OperatingSystem::Linux)
-                    .product("<product>")
-                    .build()
-                    .unwrap(),
-                false,
-                Some("model".to_owned()),
-            )
-            .await
-            .unwrap();
-
-        client.mock_client = Some(Arc::new(Mutex::new(
-            vec![vec![
-                ChatResponseStream::AssistantResponseEvent {
-                    content: "Hello!".to_owned(),
-                },
-                ChatResponseStream::AssistantResponseEvent {
-                    content: " How can I".to_owned(),
-                },
-                ChatResponseStream::AssistantResponseEvent {
-                    content: " assist you today?".to_owned(),
-                },
-            ]]
-            .into_iter(),
-        )));
-
-        let mut output = client
-            .send_message(ConversationState {
-                conversation_id: None,
-                user_input_message: UserInputMessage {
-                    images: None,
-                    content: "Hello".into(),
-                    user_input_message_context: None,
-                    user_intent: None,
-                    model_id: Some("model".to_owned()),
-                },
-                history: None,
-            })
-            .await
-            .unwrap();
-
-        let mut output_content = String::new();
-        while let Some(ChatResponseStream::AssistantResponseEvent { content }) = output.recv().await.unwrap() {
-            output_content.push_str(&content);
-        }
-        assert_eq!(output_content, "Hello! How can I assist you today?");
-    }
-}
+pub mod gemini_client;

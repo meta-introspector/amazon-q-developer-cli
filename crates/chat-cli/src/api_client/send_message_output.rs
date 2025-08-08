@@ -9,7 +9,7 @@ pub enum SendMessageOutput {
         amzn_codewhisperer_streaming_client::operation::generate_assistant_response::GenerateAssistantResponseOutput,
     ),
     QDeveloper(amzn_qdeveloper_streaming_client::operation::send_message::SendMessageOutput),
-    Mock(Vec<ChatResponseStream>),
+    Gemini(Vec<ChatResponseStream>),
 }
 
 impl SendMessageOutput {
@@ -17,7 +17,7 @@ impl SendMessageOutput {
         match self {
             SendMessageOutput::Codewhisperer(output) => output.request_id(),
             SendMessageOutput::QDeveloper(output) => output.request_id(),
-            SendMessageOutput::Mock(_) => None,
+            SendMessageOutput::Gemini(_) => None,
         }
     }
 
@@ -29,7 +29,7 @@ impl SendMessageOutput {
                 .await?
                 .map(|s| s.into())),
             SendMessageOutput::QDeveloper(output) => Ok(output.send_message_response.recv().await?.map(|s| s.into())),
-            SendMessageOutput::Mock(vec) => Ok(vec.pop()),
+            SendMessageOutput::Gemini(vec) => Ok(vec.pop()),
         }
     }
 }
@@ -39,7 +39,7 @@ impl RequestId for SendMessageOutput {
         match self {
             SendMessageOutput::Codewhisperer(output) => output.request_id(),
             SendMessageOutput::QDeveloper(output) => output.request_id(),
-            SendMessageOutput::Mock(_) => Some("<mock-request-id>"),
+            SendMessageOutput::Gemini(_) => Some("<gemini-request-id>"),
         }
     }
 }
