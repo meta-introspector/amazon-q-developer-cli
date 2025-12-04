@@ -306,6 +306,22 @@ impl Entry {
             self.path.to_string_lossy()
         )
     }
+
+    #[cfg(not(unix))]
+    fn to_long_format(&self) -> String {
+        let datetime = time::OffsetDateTime::from_unix_timestamp(self.last_modified as i64).unwrap();
+        let formatted_date = datetime
+            .format(&time::format_description::parse("[month repr:short] [day] [hour]:[minute]").unwrap())
+            .unwrap();
+
+        format!(
+            "{} {} {} {}",
+            format_ftype(&self.metadata),
+            crate::agent::util::file_size(&self.metadata),
+            formatted_date,
+            self.path.to_string_lossy()
+        )
+    }
 }
 
 fn format_ftype(md: &Metadata) -> char {

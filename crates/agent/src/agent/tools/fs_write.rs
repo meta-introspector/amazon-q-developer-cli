@@ -81,7 +81,6 @@ const FS_WRITE_SCHEMA: &str = r#"
 }
 "#;
 
-#[cfg(unix)]
 const NEWLINE: &str = "\n";
 
 impl BuiltInToolTrait for FsWrite {
